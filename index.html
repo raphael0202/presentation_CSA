@@ -1,1 +1,220 @@
-My Page
+<!doctype html>
+<html lang="en">
+
+	<head>
+		<meta charset="utf-8">
+
+		<title>Erythropoièse - Présentation</title>
+
+		<meta name="description" content="Présentation">
+		<meta name="author" content="Raphaël Bournhonesque">
+
+		<meta name="apple-mobile-web-app-capable" content="yes" />
+		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<link rel="stylesheet" href="css/reveal.min.css">
+		<link rel="stylesheet" href="css/theme/beige.css" id="theme">
+
+		<!-- For syntax highlighting -->
+		<link rel="stylesheet" href="lib/css/zenburn.css">
+
+		<!-- If the query includes 'print-pdf', include the PDF print sheet -->
+		<script>
+			if( window.location.search.match( /print-pdf/gi ) ) {
+				var link = document.createElement( 'link' );
+				link.rel = 'stylesheet';
+				link.type = 'text/css';
+				link.href = 'css/print/pdf.css';
+				document.getElementsByTagName( 'head' )[0].appendChild( link );
+			}
+		</script>
+
+		<!--[if lt IE 9]>
+		<script src="lib/js/html5shiv.js"></script>
+		<![endif]-->
+	</head>
+
+	<body>
+
+		<div class="reveal">
+
+			<!-- Any section element inside of this container is displayed as a slide -->
+			<div class="slides">
+
+				<section data-background="images/blood_cell.jpg" data-transition="linear", data-background-transition="slide">
+					<h2 style="color:#DBD3D3">Modéliser l'érythropoïèse à l'aide d'équations différentielles à retard</h2>
+					<p style="color:#DBD3D3">Crauste et <em>al.</em>
+					</p>
+				</section>
+
+				<section data-transition="linear", data-background-transition="slide">
+					<h3>L'érythropoïèse parmi l'hématopoïèse</h3>
+					<img height=500px, src="images/hematopoiesis.jpg" alt="hematopoiesis">
+                    <small>Cell Research, 2011</small>
+
+                    <aside class="notes">
+                        MEP: megakaryocyte–erythrocyte progenitor
+                    </aside>
+				</section>
+
+                <section>
+                    <h3>Auto-renouvellement des progéniteurs ?</h3>
+                    <img height=200px src="images/erythropoiesis.jpg" alt="erythropoiesis">
+                    <p><small>Blood, 2007</small></p>
+                    <p style="font-size: 80%">HSC : Hematopoietic Stem Cell<br>
+                    BFU-E : Burst Forming Unit Erythroid</p>
+                </section>
+
+                <section id="fragments">
+                        <h2>Qui se divise ?</h2>
+                        <ul>
+                            <li class="fragment roll-in" style="margin-bottom: 1em; margin-top: 1em">200 milliards d'érythrocytes produits par jour chez l'homme</li>
+                            <li class="fragment roll-in" style="margin-bottom: 1em">Division des cellules souches hématopoïétique uniquement ?</li>
+                            <li class="fragment roll-in" style="margin-bottom: 1em">Hypothèse : les progéniteurs peuvent également s'autorenouveller</li>
+                        </ul>
+                        <aside class="notes">
+                            <ul>
+                                <li>Plus de 2 millions produits/s</li>
+                                <li>Dans système hématopoïétique, traditionnelement, HSC uniquement peuvent s'autorenouveller</li>
+                                <li>Depuis fin des années 1990, confirmé expérimentalement</li>
+                            </ul>
+                        </aside>
+                </section>
+
+                </section>
+
+				<section>
+					<h3>Un modèle compartimenté de l'érythropoïèse</h3>
+					<img height=350px, src="images/fig2.svg" alt="Model">
+					<p>
+					</p>
+				</section>
+
+				<section>
+					<h3>Sous forme d'équation:</h3>
+                    <p style="margin-top:0.9em">
+					$$\frac{\partial{p(t, a)}}{\partial{t}} + \frac{\partial{p(t, a)}}{\partial{a}} = - \beta p(t, a) - \sigma p(t, a)$$
+                    </p>
+                    <p style="margin-top:0.9em">
+					$$\frac{\partial{p_{sr}(t, a)}}{\partial{t}} + \frac{\partial{p_{sr}(t, a)}}{\partial{a}} = - \beta p_{sr}(t, a)$$
+                    </p>
+                    <p style="margin-top:0.9em">
+					$$\frac{\partial{e(t, a)}}{\partial{t}} + \frac{\partial{e(t, a)}}{\partial{a}} = - \gamma e(t, a)$$
+					</p>
+
+					<p style="margin-top:1.2em">
+					avec comme conditions aux limites :
+					</p>
+
+					<p style="margin-top:1.2em">
+					$$p(t, 0) = K + 2 p_{sr}(t, \tau_c)$$
+					$$p_{sr}(t, 0) = \int_{0}^{\tau_p} \sigma p(t, a) da$$
+					$$e(t, 0) = A p(t, \tau_p)$$
+					</p>
+
+				</section>
+
+				<section>
+
+					<h3>Densité totale d'érythrocyte et de progéniteur</h3>
+					<p>
+					On définit respectivement \(E(t)\), \(P(t)\) et \(P_{sr}(t)\) comme les densités totales d'érythrocytes, de progéniteurs et de progéniteurs pouvant s'autorenouveller.<br>
+					</p>
+
+					<p style="margin-top:1.5em">
+					$$E(t) = \int_{0}^{+\infty} e(t, a) da$$
+					$$P(t) = \int_{0}^{\tau_p} p(t, a) da$$
+					$$P_{sr}(t) = \int_{0}^{\tau_c} p_{sr}(t, a) da$$
+					</p>
+                </section>
+
+				<section>
+				<h3>Rétrocontrôles positif et négatif</h3>
+
+				<p>
+					Une augmentation de la densité des érythrocytes stimule l'apoptose des progéniteurs et inhibe leur l'auto-renouvellement.
+				</p>
+
+                <p style="margin-top: 1.5em">
+                    $$\beta = \beta(E(t)) \textrm{ (taux d'apoptose des progéniteurs)}$$
+                    $$\sigma = \sigma(E(t)) \textrm{ (taux de prolifération des progéniteurs)}$$
+                </p>
+
+				</section>
+
+                <section>
+                    <h3>Simulations sans auto-renouvellement des progéniteurs</h3>
+                    <img height=400px src="images/fig3.svg" alt="fig3">
+                    <p>
+                        $$\beta = \beta_{\infty} \frac{E(t)^n}{E(t)^n + \bar{\beta}^n}$$
+                    </p>
+
+                    <aside class="notes">
+                        <ul>
+                            <li>A. 2 conditions, avec une demi-vie beta de 10^7 et 10^8 (valeur réaliste)</li>
+                            <li>10^7: remontée lente. 10^8: Pas d'oscillations, pic pas assez haut.</li>
+                            <li>B. E* = 1.03 10^7 cellules.g^-1, hors intervalle biologique souris : 10^8 - 3.10^8</li>
+                        </ul>
+                    </aside>
+
+                </section>
+
+                <section>
+
+                    <h2>Points forts et limites du modèle</h2>
+                    <p>
+                        <ul>
+                            <li class="fragment roll-in" style="margin-bottom: 1em; margin-top: 1em">Nombre de paramètres raisonnable (11)</li>
+                            <li class="fragment roll-in" style="margin-bottom: 1em">Rétrocontrôles du nombre d'érythrocyte sur le nombre de progéniteurs</li>
+                            <li class="fragment roll-in" style="margin-bottom: 1em">Bonne adéquation simulations/expériences</li>
+                        </ul>
+                    </p>
+
+                </section>
+			</div>
+		</div>
+
+		<script src="lib/js/head.min.js"></script>
+		<script src="js/reveal.min.js"></script>
+
+		<script>
+
+			// Full list of configuration options available here:
+			// https://github.com/hakimel/reveal.js#configuration
+			Reveal.initialize({
+				controls: true,
+				progress: true,
+				history: true,
+				center: true,
+
+				theme: Reveal.getQueryHash().theme, // available themes are in /css/theme
+				transition: Reveal.getQueryHash().transition || 'default', // default/cube/page/concave/zoom/linear/fade/none
+
+				// Parallax scrolling
+				// parallaxBackgroundImage: 'https://s3.amazonaws.com/hakim-static/reveal-js/reveal-parallax-1.jpg',
+				// parallaxBackgroundSize: '2100px 900px',
+
+
+				math: {
+					mathjax: 'MathJax-master/MathJax.js',
+					config: 'TeX-AMS_HTML-full'  // See http://docs.mathjax.org/en/latest/config-files.html
+				},
+
+				// Optional libraries used to extend on reveal.js
+				dependencies: [
+					{ src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
+					{ src: 'plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: 'plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+					{ src: 'plugin/zoom-js/zoom.js', async: true, condition: function() { return !!document.body.classList; } },
+					{ src: 'plugin/notes/notes.js', async: true, condition: function() { return !!document.body.classList; } },
+					{ src: 'plugin/math/math.js', async: true }
+				]
+			});
+
+		</script>
+
+	</body>
+</html>
