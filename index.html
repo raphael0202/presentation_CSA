@@ -20,6 +20,8 @@
 
 		<!-- For syntax highlighting -->
 		<link rel="stylesheet" href="lib/css/zenburn.css">
+        <link rel="stylesheet" href="custom.css">
+
 
 		<!-- If the query includes 'print-pdf', include the PDF print sheet -->
 		<script>
@@ -52,9 +54,14 @@
 
                 <section>
                     <h3>Qu'est ce que l'érythropoïèse ?</h3>
-                    <p><strong>Érythropoïèse</strong> : processus de formation des érythrocytes (aussi appelés globules rouges ou hématies).</p>
-                    <p style="margin-top: 1em">Renouvellement journalier: 1% de la quantité totale</p>
-                    <p style="margin-top: 1em">Production de <strong>200 milliards d'érythrocytes</strong> par jour</p>
+                    <ul>
+                        <li><strong>Érythropoïèse</strong> : processus de formation des érythrocytes (aussi appelés globules rouges ou hématies).</li>
+                        <li>Renouvellement journalier : 1% de la quantité totale</li>
+                        <li>Production de <strong>200 milliards d'érythrocytes</strong> par jour</li>
+                    </ul>
+                    <aside class="notes">
+                        <p>Compense hémolyse physiologique</p>
+                    </aside>
                 </section>
 
                 <section>
@@ -82,24 +89,38 @@
                     <img height=480px src="images/erythropoiesis.svg" alt="erythropoiesis" style="border:none; box-shadow:none; background:none;">
                     <p style="font-size: 80%">BFU-E : Burst Forming Unit Erythroid<br>
                     CFU-E : Colony Forming Unit Erythroid</p>
-                </section>
-
-                <section id="fragments">
-                    <h3>Régulation de l'érythropoïèse</h3>
-                    <p>Érythropoïétine (EPO)<br>
-                    Glucocorticoïdes</p>
-
-                    <p>En cas d'anémie, rôle de Bone Morphogenic Protein 4 (BMP4) et de l'hypoxie</p>
+                    <aside class="notes">
+                        <p>proérythroblaste -> réticulocytes en 5-7 jours</p>
+                        <p>réticulocytes -> globules rouges, 1 à 2 jours</p>
+                        <p>BFU-E et CFU-E : capables d'expansion, progéniteurs en amont : uniquement division avec différenciation</p>
+                    </aside>
                 </section>
 
                 <section>
-                    <h3>Érythropoïèse de stress</h3>
-                    <p><strong>Anémie</strong> : Diminution de l'hémoglobine circulante en dessous de la valeur normale.</p>
-                    <p>En cas d'anémie, augmentation de la production d'érythrocytes.</p>
-
-
+                    <h3>Régulation de l'érythropoïèse</h3>
+                    <ul>
+                        <li><em>Érythropoïétine (EPO)</em>, facteur de croissance <strong>anti-apoptotique</strong> et <strong>prolifératif</strong> (pour certains progéniteurs seulement)</li>
+                        <li><em>Glucocorticoïdes</em>, facteur de croissance</li>
+                    </ul>
                 </section>
 
+                <section>
+                    <h3>Érythropoïèse de stress (1)</h3>
+                    <ul>
+                        <li><strong>Anémie</strong> : Diminution de l'hémoglobine circulante en dessous de la valeur normale.</li>
+                        <li>En cas d'anémie, augmentation de la production d'érythrocytes.</li>
+                        <li>Érythropoïèse basale (moelle osseuse) peu modifiée, réponse principalement dans la rate</li>
+                        <li>Implication de Bone Morphogenic Protein 4 (BMP4), Hedgehog et de l'hypoxie</li>
+                    </ul>
+                </section>
+
+                <section>
+                    <h3>Érythropoïèse de stress (2)</h3>
+                    <img height=550px src="images/stress_erythropoiesis.svg" alt="stress erythropoiesis" class="no_border">
+                    <aside class="notes">
+                        <p>Anémie -> concentration d'Epo multipliée par 10 000</p>
+                    </aside>
+                </section>
 
                 <section>
                     <h3>Présentation des auteurs</h3>
@@ -116,6 +137,21 @@
                             <td><img height=300px src="images/OG.jpg"></td>
                         </tr>
                     </table>
+
+                    <aside class="notes">
+                        <p>
+                            Fabien Crauste : Biomathématiques. Modèles de production des cellules du sang (hématopoïèse, érythropoïèse, leucopoïèse)
+                            Modélisation de la réponse immunitaire (infection grippale, vaccins)</p>
+                        <p>
+                            Laurent Pujo-Menjouet : Biomaths, beaucoup sur le prion, également modèles dynamiques pop cell, hématopoïèse et érythropoïèse.
+                        </p>
+
+                        <p>
+                            Olivier Gandrillon, biologiste. Thème de recherche : Modélisation de population cellulaires, stochasticité d'expression des gènes. A travaillé sur
+                            l'auto-renouvellement progéniteurs érythropoïèse.
+                        </p>
+
+                    </aside>
 
                 </section>
 
@@ -137,7 +173,6 @@
                     <p><strong>Hématocrite</strong> : pourcentage du volume occupé par les globules rouges par rapport au volume total de sang.</p>
                 </section>
 
-
 				<section>
 					<h3>Un modèle compartimenté de l'érythropoïèse</h3>
 					<img height=350px, src="images/fig2.svg" alt="Model">
@@ -147,21 +182,21 @@
 
 				<section>
 					<h3>Sous forme d'équation:</h3>
-                    <p style="margin-top:0.9em">
+                    <p class="equation">
 					$$\frac{\partial{p(t, a)}}{\partial{t}} + \frac{\partial{p(t, a)}}{\partial{a}} = - \beta p(t, a) - \sigma p(t, a)$$
                     </p>
-                    <p style="margin-top:0.9em">
+                    <p class="equation">
 					$$\frac{\partial{p_{sr}(t, a)}}{\partial{t}} + \frac{\partial{p_{sr}(t, a)}}{\partial{a}} = - \beta p_{sr}(t, a)$$
                     </p>
-                    <p style="margin-top:0.9em">
+                    <p class="equation">
 					$$\frac{\partial{e(t, a)}}{\partial{t}} + \frac{\partial{e(t, a)}}{\partial{a}} = - \gamma e(t, a)$$
 					</p>
 
-					<p style="margin-top:1.2em">
+					<p class="equation">
 					avec comme conditions aux limites :
 					</p>
 
-					<p style="margin-top:1.2em">
+					<p class="equation">
 					$$p(t, 0) = K + 2 p_{sr}(t, \tau_c)$$
 					$$p_{sr}(t, 0) = \int_{0}^{\tau_p} \sigma p(t, a) da$$
 					$$e(t, 0) = A p(t, \tau_p)$$
@@ -175,9 +210,13 @@
 					On définit respectivement \(E(t)\), \(P(t)\) et \(P_{sr}(t)\) comme les densités totales d'érythrocytes, de progéniteurs et de progéniteurs pouvant s'autorenouveller.<br>
 					</p>
 
-					<p style="margin-top:1.5em">
+					<p class="equation">
 					$$E(t) = \int_{0}^{+\infty} e(t, a) da$$
+                    </p>
+                    <p class="equation">
 					$$P(t) = \int_{0}^{\tau_p} p(t, a) da$$
+                    </p>
+                    <p class="equation">
 					$$P_{sr}(t) = \int_{0}^{\tau_c} p_{sr}(t, a) da$$
 					</p>
                 </section>
@@ -187,8 +226,10 @@
 				<p>
 					Une augmentation de la densité des érythrocytes stimule l'apoptose des progéniteurs et inhibe leur l'auto-renouvellement.
 				</p>
-                <p style="margin-top: 1.5em">
+                <p class="equation">
                     $$\beta = \beta(E(t)) \textrm{ (taux d'apoptose des progéniteurs)}$$
+                </p>
+                <p class="equation">
                     $$\sigma = \sigma(E(t)) \textrm{ (taux de prolifération des progéniteurs)}$$
                 </p>
 				</section>
@@ -196,18 +237,18 @@
                 <section>
                     <h3>Réduction à un système d'équations différentielles à retard (1)</h3>
                     $$\frac{dP}{dt}(t) = -[\beta(E(t)) + \sigma(E(t))] P(t)\\
-                    + K + 2 \sigma(E(t - \tau_c)) P(t - \tau_c) \times exp(\int_{t - \tau_c}^t \beta(E(s)) ds)\\
+                    + K + 2 \sigma(E(t - \tau_c)) P(t - \tau_c) \times \mathrm{exp}(\int_{t - \tau_c}^t \beta(E(s)) ds)\\
                     -[K + 2 \sigma(E(t - \tau_p - \tau_c)) P(t - \tau_p - \tau_c)\\
-                    \times exp(- \int_{t - \tau_p - \tau_c}^{t - \tau_p} \beta(E(s)) ds)]\\
-                    \times exp(- \int_{t - \tau_p}^{t} (\beta(E(s)) + \sigma(E(s)) ds))$$
+                    \times \mathrm{exp}(- \int_{t - \tau_p - \tau_c}^{t - \tau_p} \beta(E(s)) ds)]\\
+                    \times \mathrm{exp}(- \int_{t - \tau_p}^{t} (\beta(E(s)) + \sigma(E(s)) ds))$$
                 </section>
 
                 <section>
                     <h3>Réduction à un système d'équations différentielles à retard (2)</h3>
                     $$\frac{dE}{dt}(t) = - \gamma E(t)\\
-                    + A \ exp(- \int_{t - \tau_p}^t (\beta(E(s)) + \sigma(E(s))) ds)\\
+                    + A \ \mathrm{exp}(- \int_{t - \tau_p}^t (\beta(E(s)) + \sigma(E(s))) ds)\\
                     \times [K + 2 \sigma(E(t - \tau_p - \tau_c)) P(t - \tau_p - \tau_c)\\
-                    \times exp(- \int_{t - \tau_p - \tau_c}^{t - \tau_p} \beta(E(s)) ds)]$$
+                    \times \mathrm{exp}(- \int_{t - \tau_p - \tau_c}^{t - \tau_p} \beta(E(s)) ds)]$$
 
                 </section>
 
@@ -231,11 +272,11 @@
                 <section>
                     <h3>Simulations avec auto-renouvellement des progéniteurs</h3>
                     <img height=350px src="images/sim_self_renewal.svg" alt="fig3">
-                    <p>
+                    <p class="equation">
                         $$\beta(E) = \beta_{\infty} \frac{E(t)^n}{E(t)^n + \bar{\beta}^n}$$
                     </p>
 
-                    <p style="margin-top: 0.5em">
+                    <p class="equation">
                         $$\sigma(E) = \sigma_{0} \frac{\bar{\sigma}^m}{\bar{\sigma}^m + E(t)^m}$$
                     </p>
 
@@ -250,17 +291,29 @@
                 </section>
 
                 <section>
-
-                    <h2>Points forts et limites du modèle</h2>
+                    <h2>Points forts du modèle</h2>
                     <p>
                         <ul>
-                            <li class="fragment roll-in" style="margin-bottom: 1em; margin-top: 1em">Nombre de paramètres raisonnable (11)</li>
-                            <li class="fragment roll-in" style="margin-bottom: 1em">Rétrocontrôles du nombre d'érythrocyte sur le nombre de progéniteurs</li>
-                            <li class="fragment roll-in" style="margin-bottom: 1em">Bonne adéquation simulations/expériences</li>
+                            <li>Nombre de paramètres raisonnable (11)</li>
+                            <li>Rétrocontrôles du nombre d'érythrocyte sur le nombre de progéniteurs</li>
+                            <li>Bonne adéquation simulations/expériences</li>
                         </ul>
                     </p>
-
                 </section>
+
+                <section>
+                    <h2>Limites du modèle</h2>
+                    <ul>
+                        <li>Érythropoïèse basale/de stress ?</li>
+                        <li>Tous les progéniteurs peuvent s'auto-renouveller</li>
+                        <li>Pas d'informations supplémentaires sur les mécanismes mis en jeux</li>
+                </section>
+
+                <section>
+                    <h3>Vers un modèle multi-échelle</h3>
+                    <img height=400px src="images/first_page_2009.png" alt="nouvel article">
+                </section>
+
 			</div>
 		</div>
 
