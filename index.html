@@ -62,6 +62,7 @@
                     <aside class="notes">
                         <p>Compense hémolyse physiologique</p>
                         <p>Homéostasie</p>
+                        <p>Globules rouges hémoglobine</p>
                     </aside>
                 </section>
 
@@ -122,19 +123,21 @@
                         <li><em>Glucocorticoïdes</em>, facteur de croissance des progéniteurs en cas d'érythropoïèse de stress</li>
                         <li>Implication de Bone Morphogenic Protein 4 (BMP4), Hedgehog et de l'hypoxie</li>
                     </ul>
-                </section>
 
-                <section>
-                    <h3>Érythropoïèse de stress (2)</h3>
-                    <img height=550px src="images/stress_erythropoiesis.svg" alt="stress erythropoiesis" class="no_border">
                     <aside class="notes">
                         <p>Anémie -> concentration d'Epo multipliée par 10 000</p>
                     </aside>
                 </section>
 
                 <section>
-                    <h3>Présentation des auteurs</h3>
+                    <h3>Érythropoïèse de stress (2)</h3>
+                    <img height=550px src="images/stress_erythropoiesis.svg" alt="stress erythropoiesis" class="no_border">
+                    <aside class="notes">
+                    </aside>
+                </section>
 
+                <section>
+                    <h3>Présentation des auteurs</h3>
                     <table>
                         <tr>
                             <td>Fabien Crauste</td>
@@ -147,7 +150,6 @@
                             <td><img height=300px src="images/OG.jpg"></td>
                         </tr>
                     </table>
-
                     <aside class="notes">
                         <p>
                             Fabien Crauste : Biomathématiques. Modèles de production des cellules du sang (hématopoïèse, érythropoïèse, leucopoïèse)
@@ -160,9 +162,7 @@
                             Olivier Gandrillon, biologiste. Thème de recherche : Modélisation de population cellulaires, stochasticité d'expression des gènes. A travaillé sur
                             l'auto-renouvellement progéniteurs érythropoïèse.
                         </p>
-
                     </aside>
-
                 </section>
 
                 <section>
@@ -242,10 +242,10 @@
 					Une augmentation de la densité des érythrocytes stimule l'apoptose des progéniteurs et inhibe leur l'auto-renouvellement.
 				</p>
                 <p class="equation">
-                    $$\beta = \beta(E(t)) \textrm{ (taux d'apoptose des progéniteurs)}$$
+                    $$\beta = \beta(E(t))$$ (taux d'apoptose des progéniteurs)
                 </p>
                 <p class="equation">
-                    $$\sigma = \sigma(E(t)) \textrm{ (taux de prolifération des progéniteurs)}$$
+                    $$\sigma = \sigma(E(t))$$ (taux de prolifération des progéniteurs)
                 </p>
 				</section>
 
@@ -264,11 +264,24 @@
                     + A \ \mathrm{exp}(- \int_{t - \tau_p}^t (\beta(E(s)) + \sigma(E(s))) ds)\\
                     \times [K + 2 \sigma(E(t - \tau_p - \tau_c)) P(t - \tau_p - \tau_c)\\
                     \times \mathrm{exp}(- \int_{t - \tau_p - \tau_c}^{t - \tau_p} \beta(E(s)) ds)]$$
+                </section>
 
+                <section>
+                    <h3>Modélisation de l'anémie</h3>
+                    <p>Diminution linéaire de la densité d'érythrocytes. Conditions initiales :</p>
+                    <p class="equation">
+                        $$E_0(t) = E^* \frac{1 - H^*}{H^*} \times + \frac{H_0(t)}{1 - H_0(t)}$$
+                    </p>
+                    <p>avec pour $t \in [-\tau_p, -\tau_{in}]$ :</p>
+                    <p class="equation">$$H_0(t) = H^*$$</p>
+                    <p>et :</p>
+                    <p class="equation">
+                    $$H_0(t) = \frac{H^* - H_{min}}{\tau_{in}^*}t + H_{min}$$
+                    </p>
+                    <p> pour $t \in [-\tau_{in}, 0]$</p>
                     <aside class="notes">
                         <p>2 cas : avec ou sans auto-renouvellement, pour comparer</p>
                     </aside>
-
                 </section>
 
                 <section>
