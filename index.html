@@ -61,6 +61,7 @@
                     </ul>
                     <aside class="notes">
                         <p>Compense hémolyse physiologique</p>
+                        <p>Homéostasie</p>
                     </aside>
                 </section>
 
@@ -100,16 +101,17 @@
                     <h3>Régulation de l'érythropoïèse</h3>
                     <ul>
                         <li><em>Érythropoïétine (EPO)</em>, facteur de croissance <strong>anti-apoptotique</strong> et <strong>prolifératif</strong> (pour certains progéniteurs seulement)</li>
-                        <li><em>Glucocorticoïdes</em>, facteur de croissance</li>
+                        <li><strong>Anémie</strong> : Diminution de l'hémoglobine circulante en dessous de la valeur normale.</li>
+                        <li>En cas d'anémie, <strong>érythropoïèse de stress</strong>. Augmentation de la production d'érythrocytes.</li>
                     </ul>
                 </section>
 
                 <section>
                     <h3>Érythropoïèse de stress (1)</h3>
                     <ul>
-                        <li><strong>Anémie</strong> : Diminution de l'hémoglobine circulante en dessous de la valeur normale.</li>
-                        <li>En cas d'anémie, augmentation de la production d'érythrocytes.</li>
                         <li>Érythropoïèse basale (moelle osseuse) peu modifiée, réponse principalement dans la rate</li>
+                        <li>Augmentation très importante de la concentration d'Epo</li>
+                        <li><em>Glucocorticoïdes</em>, facteur de croissance des progéniteurs en cas d'érythropoïèse de stress</li>
                         <li>Implication de Bone Morphogenic Protein 4 (BMP4), Hedgehog et de l'hypoxie</li>
                     </ul>
                 </section>
@@ -181,7 +183,7 @@
 				</section>
 
 				<section>
-					<h3>Sous forme d'équation:</h3>
+					<h3>Sous forme d'équations :</h3>
                     <p class="equation">
 					$$\frac{\partial{p(t, a)}}{\partial{t}} + \frac{\partial{p(t, a)}}{\partial{a}} = - \beta p(t, a) - \sigma p(t, a)$$
                     </p>
@@ -202,10 +204,15 @@
 					$$e(t, 0) = A p(t, \tau_p)$$
 					</p>
 
+                    <aside class="notes">
+                        <p>Concentration d'Epo et Glucocorticoïdes pas directement modélisés</p>
+                        <p>Paramètres évalués manuellement, pas d'optimisation des paramètres</p>
+                    </aside>
+
 				</section>
 
 				<section>
-					<h3>Densité totale d'érythrocyte et de progéniteur</h3>
+					<h3>Densités totales d'érythrocytes et de progéniteurs</h3>
 					<p>
 					On définit respectivement \(E(t)\), \(P(t)\) et \(P_{sr}(t)\) comme les densités totales d'érythrocytes, de progéniteurs et de progéniteurs pouvant s'autorenouveller.<br>
 					</p>
@@ -250,6 +257,10 @@
                     \times [K + 2 \sigma(E(t - \tau_p - \tau_c)) P(t - \tau_p - \tau_c)\\
                     \times \mathrm{exp}(- \int_{t - \tau_p - \tau_c}^{t - \tau_p} \beta(E(s)) ds)]$$
 
+                    <aside class="notes">
+                        <p>2 cas : avec ou sans auto-renouvellement, pour comparer</p>
+                    </aside>
+
                 </section>
 
                 <section>
@@ -261,6 +272,7 @@
 
                     <aside class="notes">
                         <ul>
+                            <li>cinétique de Michaelis-Menten</li>
                             <li>A. 2 conditions, avec une demi-vie beta de 10^7 et 10^8 (valeur réaliste)</li>
                             <li>10^7: remontée lente. 10^8: Pas d'oscillations, pic pas assez haut.</li>
                             <li>B. E* = 1.03 10^7 cellules.g^-1, hors intervalle biologique souris : 10^8 - 3.10^8</li>
@@ -295,7 +307,7 @@
                     <p>
                         <ul>
                             <li>Nombre de paramètres raisonnable (11)</li>
-                            <li>Rétrocontrôles du nombre d'érythrocyte sur le nombre de progéniteurs</li>
+                            <li>Rétrocontrôles du nombre d'érythrocytes sur le nombre de progéniteurs</li>
                             <li>Bonne adéquation simulations/expériences</li>
                         </ul>
                     </p>
@@ -313,6 +325,15 @@
                     <h3>Vers un modèle multi-échelle</h3>
                     <img height=400px src="images/first_page_2009.png" alt="nouvel article">
                 </section>
+
+                <section>
+                    <h2>Conclusion</h2>
+                    <ul>
+                        <li>Auto-renouvellement des progéniteurs essentiel dans le modèle</li>
+                        <li>Modèle simple de l'érythropoïèse, contrôle des valeurs de paramètres</li>
+                        <li>L'Epo peut en fait agir bien en amont (Grover <em>et al.</em>, 2014)
+                </section>
+
 
 			</div>
 		</div>
