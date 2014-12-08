@@ -11,11 +11,11 @@
    xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
    width="828.12238"
-   height="344.07611"
+   height="380.2149"
    id="svg86485"
    version="1.1"
    inkscape:version="0.48.4 r9939"
-   sodipodi:docname="erythropoiesis.svg">
+   sodipodi:docname="erythropoiesis_epo.svg">
   <defs
      id="defs86487">
     <marker
@@ -339,8 +339,8 @@
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
      inkscape:zoom="0.98994949"
-     inkscape:cx="238.42872"
-     inkscape:cy="98.867081"
+     inkscape:cx="735.99578"
+     inkscape:cy="175.41197"
      inkscape:document-units="px"
      inkscape:current-layer="g5091"
      showgrid="false"
@@ -361,6 +361,7 @@
         <dc:format>image/svg+xml</dc:format>
         <dc:type
            rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title />
       </cc:Work>
     </rdf:RDF>
   </metadata>
@@ -368,11 +369,19 @@
      inkscape:label="Calque 1"
      inkscape:groupmode="layer"
      id="layer1"
-     transform="translate(-60.809837,-206.34095)">
+     transform="translate(-60.80984,-206.34095)">
     <g
        style="display:inline"
        id="g5091"
        transform="matrix(0.75220924,0,0,0.75220924,158.737,437.06334)">
+      <rect
+         style="opacity:0.23000004;fill:#784421;fill-opacity:0.57337886;stroke:none"
+         id="rect3109"
+         width="335.37067"
+         height="167.6853"
+         x="98.994942"
+         y="183.46185"
+         transform="matrix(1.3294173,0,0,1.3294173,-130.18607,-306.72634)" />
       <g
          id="g86562"
          transform="translate(-183.97926,-33.572857)">
@@ -820,12 +829,12 @@
          id="text88210"
          sodipodi:linespacing="125%"><tspan
            sodipodi:role="line"
+           id="tspan88212"
            x="848.53162"
-           y="99.529762"
-           id="tspan3548">Érythrocyte</tspan></text>
+           y="99.529762">Érythrocyte</tspan></text>
       <path
          sodipodi:type="arc"
-         style="fill:#4d4d4d;fill-opacity:0.57337886000000005;stroke:none;stroke-width:1.39997224000000009;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none"
+         style="fill:#4d4d4d;fill-opacity:0.57337886;stroke:none"
          id="path88214"
          sodipodi:cx="-155.05841"
          sodipodi:cy="7.6953135"
@@ -863,6 +872,17 @@
          id="path88220"
          style="fill:#4d4d4d;fill-opacity:0.57337886;stroke:none"
          sodipodi:type="arc" />
+      <text
+         xml:space="preserve"
+         style="font-size:18.61184311px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Liberation Sans;-inkscape-font-specification:Liberation Sans"
+         x="8.1340895"
+         y="181.58144"
+         id="text3111"
+         sodipodi:linespacing="125%"><tspan
+           sodipodi:role="line"
+           id="tspan3113"
+           x="8.1340895"
+           y="181.58144">sensibles à l'Epo</tspan></text>
     </g>
   </g>
 </svg>
