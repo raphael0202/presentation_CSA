@@ -268,19 +268,16 @@
 
                 <section>
                     <h3>Modélisation de l'anémie</h3>
-                    <p>Diminution linéaire de la densité d'érythrocytes. Conditions initiales :</p>
-                    <p class="equation">
-                        $$E_0(t) = E^* \frac{1 - H^*}{H^*} \times + \frac{H_0(t)}{1 - H_0(t)}$$
-                    </p>
-                    <p>avec pour $t \in [-\tau_p, -\tau_{in}]$ :</p>
-                    <p class="equation">$$H_0(t) = H^*$$</p>
+                    <p>Équations différentielles à retard : conditions initiales nécessaires entre $\tau_{p}$ et $0$.</p>
+                    <p>Diminution linéaire de la densité d'érythrocytes entre $\tau_{in}$ et $0$. Conditions initiales :</p>
+                    <p class="equation">$H_0(t) = H^*\ $ avec $\ t \in [-\tau_p, -\tau_{in}]$</p>
                     <p>et :</p>
                     <p class="equation">
-                    $$H_0(t) = \frac{H^* - H_{min}}{\tau_{in}^*}t + H_{min}$$
+                    $H_0(t) = \frac{H^* - H_{min}}{\tau_{in}^*}t + H_{min}\ $ pour $\ t \in [-\tau_{in}, 0]$
                     </p>
-                    <p> pour $t \in [-\tau_{in}, 0]$</p>
                     <aside class="notes">
                         <p>2 cas : avec ou sans auto-renouvellement, pour comparer</p>
+                        <p>Déduction du nombre d'érythrocyte à partir de l'hématocrite</p>
                     </aside>
                 </section>
 
